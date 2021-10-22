@@ -18,6 +18,12 @@ jobs:
       uses: actions/setup-node@v1
       with: 
         node-version: "16.6"
+    - name: 2 - Install yarn and run unittest
+      run: |
+        yarn
+        npx react-scripts test --watchAll=false
+      env:
+        CI: true
     - name: Bump version 
       id: tag_version
       uses: mathieudutour/github-tag-action@v5.6
